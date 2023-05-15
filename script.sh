@@ -11,9 +11,13 @@ groupadd GRP_ADM
 groupadd GRP_VEN
 groupadd GRP_SEC
 
-useradd silvio -m -s ./bin/bash -p $(openssl passwd -cript senha123) -G GRP_ADM
-useradd roberto -m -s ./bin/bash -p $(openssl passwd -cript senha123) -G GRP_VEN
-useradd roberto -m -s ./bin/bash -p $(openssl passwd -cript senha123) -G GRP_SEC
+useradd silvio -m -s ./bin/bash -p $(openssl passwd -cript senha123) 
+useradd roberto -m -s ./bin/bash -p $(openssl passwd -cript senha123) 
+useradd sergio -m -s ./bin/bash -p $(openssl passwd -cript senha123) 
+
+adduser silvio GRP_ADM
+adduser roberto GRP_VEN
+adduser sergio GRP_SEC
 
 chown root:GRP_ADM /adm
 chown root:GRP_VEN /ven
